@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-// const = require('')
+const JWT = require('jsonwebtoken')
 // const = require('')
 
 const PORT = 5000;
