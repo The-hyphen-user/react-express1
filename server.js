@@ -8,14 +8,18 @@ const PORT = 5000;
 
 const app = express();
 
-app.use(cors);
+app.use(cors());
 
 
+app.get('/:id', (req, res) => {
+    res.send(req.params.id)
+  })
 
-
-app.get('/api', (req, res) => {
-    axios.get()
-})
+// app.get('/', (req, res) => {
+//     console.log('triggered')
+//     //const params = req.body.params;
+//     res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' })
+// })
 
 
 
