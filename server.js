@@ -15,6 +15,8 @@ app.get('/:id', (req, res) => {
     res.send(req.params.id)
   })
 
+  app.get('/login', )
+
 // app.get('/', (req, res) => {
 //     console.log('triggered')
 //     //const params = req.body.params;
