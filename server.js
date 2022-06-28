@@ -21,7 +21,7 @@ app.use('/api/user', userRoute)
 
 
 
-mongoose.connect('mongodb+srv://Reactexpress1:ExxNqoJjaCq7U13D@ontether.xnccz.mongodb.net/?retryWrites=true&w=majority', { 
+mongoose.connect(process.env.DB_CONNECT, { 
   useNewUrlParser: true, useUnifiedTopology: true 
 })
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
