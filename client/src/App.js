@@ -8,6 +8,7 @@ import Home from './components/Home';
 import User from './components/User';
 import About from './components/About';
 import Data from './components/Data';
+import Login from './components/LogIn';
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
       <Routes>
       <Route path='/' />
       <Route path='/about' element={<About/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/home' element={<Home/>}/>
       <Route path='/user' element={<User/>}/>
       <Route exact path='/data' element={<Data/>}/>

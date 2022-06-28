@@ -1,28 +1,28 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
-const JWT = require('jsonwebtoken')
-// const = require('')
 
-const PORT = 5000;
+const mongoose = require('mongoose');
+const express = require('express');
+const dotenv = require("dotenv");
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5000;
+const userRoute = require('./routes/users')
 
 const app = express();
 
 app.use(cors());
-
-
-app.get('/:id', (req, res) => {
-    res.send(req.params.id)
-  })
-
-  app.get('/login', )
-
-// app.get('/', (req, res) => {
-//     console.log('triggered')
-//     //const params = req.body.params;
-//     res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' })
-// })
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+dotenv.config();
 
 
 
-app.listen(PORT, () => console.log(`server running on ${PORT}`))
+
+app.use('/api/user', userRoute)
+
+
+
+mongoose.connect('mongodb+srv://Reactexpress1:ExxNqoJjaCq7U13D@ontether.xnccz.mongodb.net/?retryWrites=true&w=majority', { 
+  useNewUrlParser: true, useUnifiedTopology: true 
+})
+  .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+  .catch((error) => console.log(`${error} did not connect`));
